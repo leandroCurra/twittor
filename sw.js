@@ -56,7 +56,7 @@ e.waitUntil( respuesta );
  self.addEventListener( 'fetch' , e =>{
     const respuesta =   caches.match( e.request )
                 .then( response => {
-                    if( response !== undefined) {
+                    if( response ) {
                         return response;
                     }else{
                         fetch( e.request ).then( responseFetch=> {
